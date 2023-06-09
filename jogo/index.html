@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>trabalho</title>
+  </head>
+  <body>
+     <div id="app">
+      <fieldset>
+          <legend><h1> faça sua escolha</h1></legend>
+          <input type="radio" name="escolha" id="par" v-model="userChoice" value="par">
+          <label for="par">Par</label>
+          <input type="radio" name="escolha" id="impar" v-model="userChoice" value="impar">
+          <label for="impar">Ímpar</label>
+      </fieldset> 
+  
+      <section id="divs">
+          <div id="div1">seu numero 
+              <input type="number" v-model="userNumber" placeholder="Digite um número">
+          </div>
+          <button v-on:click="play" id="button2">JOGAR!</button>
+          <div id="div2">maquina
+              <h3 style="margin-top:4px; height: 10px;">escolhendo ...</h3>
+              <button v-on:click="generaNumero" id="button">escolha</button>
+          </div>
+      </section>
+  
+      <div v-if="resultado !== null">
+          <p>Você escolheu: {{ userNumber }}</p>
+          <p>Número da máquina: {{ machineNumber }}</p>
+          <p>Resultado: {{ resultado }}</p>
+      </div>
+     </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          userChoice: '',
+          userNumber: null,
+          machineNumber: null,
+          resultado: null
+        },
+        methods: {
+          generaNumero() {
+            this.machineNumber = Math.floor(Math.random() * 5) + 1;
+          },
+          play() {
+            if (!this.userChoice || this.userNumber === null || this.machineNumber === null) {
+              alert("Por favor, marque a opção 'par' ou 'ímpar', digite um número e aperte o botão para a maquina sortear um número.");
+              return;
+            }
+  
+            const sum = parseInt(this.userNumber) + parseInt(this.machineNumber);
+
+  
+              if ((this.userChoice === 'par' && sum % 2 === 0 && sum !== 0) || (this.userChoice === 'impar' && sum % 2 !== 0 && sum !== 0)) {
+
+              this.resultado = sum + ' Você ganhou!';
+            } else {
+              this.resultado = sum + ' Você perdeu!';
+            }
+          }
+        }
+      });
+    </script>
+</body>
+</html>
+
+
+
+
+

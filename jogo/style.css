@@ -1,0 +1,80 @@
+input::placeholder{
+    font-size: larger;
+    font-weight: bolder;
+    font-style: oblique;
+    font-size: larger;
+    color: #ffffff;
+}
+#button{
+    margin-top: 1px;
+    margin: auto;
+    color:white;
+    border-radius:5px;
+    border: none;
+    background-color: rgb(60, 207, 47);
+    width: 90px;
+    height: 40px;
+
+}
+#button2{   
+    color:white;
+    margin-top: 150px;
+    border-radius:5px;
+    border: none;
+    background-color: rgb(60, 207, 47);
+    width: 90px;
+    height: 40px;
+}
+#number{
+    color: white;
+    outline: 0;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    border-radius: 0px;
+    border: 0;
+    background-color:#63caca;
+    margin: auto;
+    height: 25%;
+    border-bottom:2px solid #ffffff;
+    width: 200px;
+}
+#div1, #div2{
+    box-shadow:3px 3px 1.5px;
+    font-size: large;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    color:white;
+    border-radius:10px;
+    margin-top: 50px;
+    height: 55%;
+    width: 30%;
+    background-color: #63caca;
+}
+#divs{
+    border: 2.5px solid;
+    border-radius: 25px;
+    margin-left: 10%;
+    width:80%;
+    height:210px;
+    background-color:#3c97cb;
+    justify-content: space-around;
+    display: flex;
+    margin-top: 50px;
+}
+body{
+    flex-direction: column;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color:#3c6084
+}
+fieldset{
+    margin-left: 35%;
+    width:24.1%;
+    font-size: 20px;
+    justify-content: center;
+    border-radius:10px;
+    display:flex;
+}
+
